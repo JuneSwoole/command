@@ -1,0 +1,24 @@
+{
+    "name": "juneswoole/command",
+    "type": "library",
+    "description": "JuneSwoole command",
+    "keywords": [
+        "framework",
+        "swoole"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JuneChen",
+            "email": "juneswoole@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JuneSwoole\\Command\\": "src/"
+        }
+    }
+}
