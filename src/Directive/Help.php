@@ -3,7 +3,7 @@
  * @Author: juneChen && juneswoole@163.com
  * @Date: 2023-07-09 11:41:56
  * @LastEditors: juneChen && juneswoole@163.com
- * @LastEditTime: 2023-07-09 21:46:51
+ * @LastEditTime: 2023-07-10 23:21:21
  * @Description: Help Command
  * 
  */
@@ -26,7 +26,10 @@ class Help implements CommandInterface
     public function exec(array $args): ?string
     {
         $command = array_shift($args);
-        return Container::getInstance()->get($command)->help();
+        if (empty($command)) {
+            return $this->help($args);
+        }
+        return Container::getInstance()->get($command)->help($args);
     }
 
     public function help(array $args): ?string
