@@ -31,6 +31,13 @@ class Help implements CommandInterface
 
     public function help(array $args): ?string
     {
-        return '';
+        $commands = implode(PHP_EOL, Container::getInstance()->getCommandKeys());
+        return <<<HELP
+\e[30m  welcome to use JuneSwoole! \e[0m
+Usage: php juneswoole [command] [arg]
+Get help : php easyswoole or php easyswoole help [command]
+commands: 
+{$commands}
+HELP;
     }
 }
